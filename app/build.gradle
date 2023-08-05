@@ -1,14 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('C:\\Users\\Fissy\\Desktop\\apktool\\tools\\keystore\\Retail.jks')
-            storePassword 'Qpalzm1784!'
-            keyAlias 'Retail'
-            keyPassword 'Qpalzm1784!'
-        }
-    }
+    
     compileSdkVersion rootProject.ext.COMPILE_SDK_VERSION
     defaultConfig {
         applicationId rootProject.ext.APPLICATION_ID
@@ -17,7 +10,7 @@ android {
         versionCode rootProject.ext.VERSION_CODE
         versionName rootProject.ext.VERSION_NAME
         vectorDrawables.useSupportLibrary = true
-        signingConfig signingConfigs.debug
+        
     }
 
     compileOptions {
@@ -30,15 +23,6 @@ android {
         }
     }
 
-    android.applicationVariants.all { variant ->
-        variant.outputs.all {
-            if (variant.name.endsWith("debug")) {
-                outputFileName = "Dialer_v${defaultConfig.versionName}_debug.apk"
-            } else {
-                outputFileName = "Dialer_v${defaultConfig.versionName}_release.apk"
-            }
-        }
-    }
 
     lint {
         abortOnError false
