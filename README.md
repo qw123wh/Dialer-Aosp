@@ -1,3 +1,3 @@
-# Dialer_10
+# Aosp Dialer build in Android Studio
 
-Android 10 Dialer
+
